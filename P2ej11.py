@@ -4,21 +4,21 @@ archivo_notas_1= open("C:\\Users\\ivomi\\OneDrive\\Escritorio\\Seminario Python\
 archivo_notas_2= open("C:\\Users\\ivomi\\OneDrive\\Escritorio\\Seminario Python\\eval2.txt", 'r', encoding= "utf8")
 lista_nombres_1= []
 lista_nombres_2= []
-lista_comun= []
+set_comun= set()    
 lista_eval_1= []
 lista_eval_2= []
 
 for elem in archivo_nombres_1:
-    lista_nombres_1.append(elem.strip().replace("'," , "").replace("'", ""))
+    lista_nombres_1.append(elem.strip().replace("'," , "").replace("'", "").lower())
 
 for elem in archivo_nombres_2:
-    lista_nombres_2.append(elem.strip().replace("'," , "").replace("'", ""))
+    lista_nombres_2.append(elem.strip().replace("'," , "").replace("'", "").lower())
 
 for elem in lista_nombres_1:
     if elem in lista_nombres_2:
-        lista_comun.append(elem)
+        set_comun.add(elem)
 
-print("Nombres que se encuentran en ambas listas: " + str(lista_comun))
+print("Nombres que se encuentran en ambas listas: " + str(set_comun))
 
 print (" ")
 
